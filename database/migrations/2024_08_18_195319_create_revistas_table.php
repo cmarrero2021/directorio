@@ -31,7 +31,7 @@ class CreateRevistasTable extends Migration
             $table->text('direccion');
             $table->string('telefono', 11)->nullable();
             $table->text('resumen')->default('');
-            $table->string('portada', 255)->default('');
+            $table->text('portada')->default('');
             $table->timestamp('created_at', 6)->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at', 6)->nullable();
             $table->softDeletes('deleted_at', 6);

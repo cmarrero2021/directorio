@@ -20,5 +20,14 @@ class DatabaseSeeder extends Seeder
         $this->call(IdiomasSeeder::class);
         $this->call(IndicesSeeder::class);
         $this->call(PeriodicidadSeeder::class);
+        $this->call(AreasConocimientoTableSeeder::class);
+        $this->call(EstadosTableSeeder::class);
+        $this->call(CiudadesTableSeeder::class);
+        $this->call(EditorialesTableSeeder::class);
+        $this->call(FormatosTableSeeder::class);
+        $this->call(IdiomasTableSeeder::class);
+        $this->call(IndicesTableSeeder::class);
+        $this->call(PeriodicidadTableSeeder::class);
+        $this->call(RevistasTableSeeder::class);
     }
 }
