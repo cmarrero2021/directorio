@@ -42,6 +42,7 @@
                 </div>
             </div>
     </nav>
+    
     <img src="{{ asset('vendor/adminlte/dist/img/logo_revista.png') }}" class="img-fluid w-25 mx-3 mt-3" alt="Logo Revista">
 
     </body>
