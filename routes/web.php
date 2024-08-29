@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\GraficosController;
+use App\Http\Controllers\RevistasController;
 
 
 /*
@@ -23,9 +24,6 @@ Route::get('/', function() {
 })->name('welcome');
 Auth::routes();
 
-// Route::get('/', function() {
-//     return view('home');
-// })->name('home')->middleware('auth');
 Route::middleware(['auth'])->group(function () {
     Route::get('home', [HomeController::class, 'index']);
     Route::resource('roles', RolesController::class)->names('admin.roles');
@@ -34,4 +32,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('permisos', PermissionsController::class)->names('admin.permissions');
     Route::get('roles/{id}/search', [RolesController::class, 'search'])->name('admin.roles.search');    
     Route::post('permisos/search', [PermissionsController::class, 'search'])->name('admin.permissions.search');    
+    Route::resource('revistas', RevistasController::class)->names('revistas');
 });

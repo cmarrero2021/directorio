@@ -310,7 +310,7 @@ return [
             'text'    => 'Revistas',
             'icon'    => 'fas fa-book-open',
             'can'     => '',
-            'url'  => 'trabajadores',
+            'url'  => 'revistas',
         ],        
         [
             'text'    => 'Estadísticas',
