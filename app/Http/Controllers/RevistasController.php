@@ -21,7 +21,6 @@ class RevistasController extends Controller
     }
     public function rev_tabla(Request $request)
     {
-        \Log::info($request->all());
         $offset = $request->input('offset', 0);
         $limit = $request->input('limit', 10);
         $user = Auth::user();
