@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.revistas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    cursor:pointer;
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image-item h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.image-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.image-item span {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 10px;
+}
