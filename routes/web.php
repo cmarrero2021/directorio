@@ -22,6 +22,10 @@ use App\Http\Controllers\RevistasController;
 Route::get('/', function() {
     return view('welcome');
 })->name('welcome');
+Route::get('publicas', function() {
+    return view('revistas.publicas');
+})->name('publicas');
+
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
