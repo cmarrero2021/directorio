@@ -6,6 +6,7 @@
 @stop
 @section('content')
     <div class="container">
+        
         <table 
             id="tbl-revistas" 
             class="table table-striped table-hover table-responsive"
@@ -32,14 +33,16 @@
         >
             <thead>
                 <tr>
-                    <th data-field="id" data-sortable=true></thdata-field>ID</th>
-                    <th data-field="portada"></thdata-field>PORTADA</th>
-                    <th data-field="revista" data-sortable=true></thdata-field>REVISTA</th>
+                    <th data-field="actions" data-formatter="actionFormatter" data-events="actionEvents">ACCIONES</th>
+                <!-- <th data-field="actions" data-formatter="actionFormatter" >ACCIONES</th> -->
+                    <th data-field="id" data-sortable=true>ID</th>
+                    <th data-field="portada" data-formatter="imageFormatter">PORTADA</th>
+                    <th data-field="revista" data-sortable=true>REVISTA</th>
                     <th data-field="area_conocimiento" data-sortable="true">ÁREAS<br/>CONOCIMIENTO</th>
                     <th data-field="editorial" data-sortable="true">EDITORIAL</th>
                     <th data-field="indice" data-sortable="true">ÍNDICE</th>
                     <th data-field="idioma" data-sortable="true">IDIOMA</th>
-                    <th data-field="periodicidad" data-sortable="true">PERIDIOCIDAD</th>
+                    <th data-field="periodicidad" data-sortable="true">PERIODICIDAD</th>
                     <th data-field="formato" data-sortable="true">FORMATO</th>
                     <th data-field="deposito_legal_impreso" data-sortable="true">DEPÓSITO<br/>LEGAL IMPRESO</th>
                     <th data-field="deposito_legal_digital" data-sortable="true">DEPÓSITO<br/>LEGAL DIGITAL</th>
@@ -53,13 +56,29 @@
         </table>
     </div>
 @stop
+
 @vite(['resources/js/app.js', 'resources/css/app.css'])
+
 @section('css')
 @stop
-@section('js')
-<<script>
-    document.addEventListener('DOMContentLoaded', function() {
 
-    });	
+@section('js')
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // $('#tbl-revistas').bootstrapTable({
+        //     toolbar: '#toolbar', // Asegúrate de que el ID del toolbar sea correcto
+        // });
+        // // $('#tbl-revistas').bootstrapTable({
+        // // toolbar: '#toolbar', // Asegúrate de que el ID del toolbar sea correcto
+        // // // Agregar el botón personalizado al toolbar después de inicializar la tabla
+        // $('#toolbar').append(`
+        //     <button class="btn btn-success" id="add-new" title="Agregar revista">
+        //         <i class="bi bi-plus-lg" style="font-size: 1.5rem;"></i>
+        //     </button>
+        // `);
+    });
+
+
+    
 </script>
 @stop
