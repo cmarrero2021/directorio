@@ -9,3 +9,6 @@
 #toolbar .btn {
     margin-left: 10px; /* Espacio entre el botón nuevo y otros botones si los hay */
 }
+.formato-texto1 {
+    background-color:#f7f9cb !important;
+}

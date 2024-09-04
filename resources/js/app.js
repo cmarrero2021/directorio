@@ -1,4 +1,6 @@
 import './bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 import 'bootstrap-table/dist/bootstrap-table.min.css';
 import 'bootstrap-table';
 import './revistas.js';
@@ -12,7 +14,7 @@ window.imageFormatter = function(value, row, index) {
 // Formatter para la columna de acciones
 window.actionFormatter = function(value, row, index) {
     return `
-        <button class="btn btn-primary btn-sm" data-action="view" data-id="${row.id}" title="Ver">
+        <button class="btn btn-primary btn-sm" data-action="view" data-bs-toggle="modal" data-bs-target = "#revistaModal" data-id="${row.id}" title="Ver">
             <i class="bi bi-eye"></i>
         </button>
         <button class="btn btn-warning btn-sm" data-action="edit" data-id="${row.id}" title="Editar">
@@ -29,9 +31,8 @@ window.actionEvents = {
     'click .btn': function (e, value, row, index) {
         const action = $(e.currentTarget).data('action');
         const id = $(e.currentTarget).data('id');
-
         if (action === 'view') {
-            viewRecord(id);
+            viewRecord(id,row.revista);
         } else if (action === 'edit') {
             editRecord(id);
         } else if (action === 'delete') {
@@ -41,9 +42,40 @@ window.actionEvents = {
 };
 
 // Funciones de acción
-window.viewRecord = function(id) {
-    console.log('Ver registro con ID:', id);
-    // Implementa la lógica para ver el registro
+window.viewRecord = function(id,revista) {
+    $("#btnGuardar").hide()
+    console.log("revista: ",revista)
+    $("#revistaModalLabel").text("Editar revista "+revista)
+    fetch('/revistas/'+(id), {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        },
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        $("#portada").attr('src','/portadas/'+data.revista.portada)
+        $("#revista").val(data.revista.revista)
+        $("#anio_inicial").val(data.revista.anio_inicial)
+        $("#indice").val(data.revista.indice)
+        $("#editorial").val(data.revista.editorial)
+        $("#area_conocimiento").val(data.revista.area_conocimiento)
+        $("#idioma").val(data.revista.idioma)
+        $("#periodicidad").val(data.revista.periodicidad)
+        $("#formato").val(data.revista.formato)
+        console.log("revista: ",data.revista);
+    })
+    .catch(error => {
+        console.error('Hubo un problema con la solicitud Fetch:', error);
+    });
+
+    
 };
 
 window.editRecord = function(id) {

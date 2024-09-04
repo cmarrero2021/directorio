@@ -83,7 +83,11 @@ class RevistasController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $revista = Vrevista::findOrFail($id);
+        return response()->json([
+            'revista' => $revista
+        ]);        
+
     }
 
     /**

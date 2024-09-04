@@ -6,7 +6,8 @@
 @stop
 @section('content')
     <div class="container">
-        
+        <!-- @include('revistas.partials.revista-modal') -->
+        @include('revistas.partials.revista-modal2')
         <table 
             id="tbl-revistas" 
             class="table table-striped table-hover table-responsive"
@@ -65,17 +66,7 @@
 @section('js')
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // $('#tbl-revistas').bootstrapTable({
-        //     toolbar: '#toolbar', // Asegúrate de que el ID del toolbar sea correcto
-        // });
-        // // $('#tbl-revistas').bootstrapTable({
-        // // toolbar: '#toolbar', // Asegúrate de que el ID del toolbar sea correcto
-        // // // Agregar el botón personalizado al toolbar después de inicializar la tabla
-        // $('#toolbar').append(`
-        //     <button class="btn btn-success" id="add-new" title="Agregar revista">
-        //         <i class="bi bi-plus-lg" style="font-size: 1.5rem;"></i>
-        //     </button>
-        // `);
+
     });
 
 
