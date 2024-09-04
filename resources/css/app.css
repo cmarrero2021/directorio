@@ -1,1 +1,14 @@
 
+/* Asegúrate de que el contenedor del toolbar esté configurado para alinear los elementos correctamente */
+#toolbar {
+    display: flex;
+    justify-content: flex-end; /* Alinea todos los elementos al final (derecha) */
+    padding: 5px; /* Ajusta el padding según sea necesario */
+}
+
+#toolbar .btn {
+    margin-left: 10px; /* Espacio entre el botón nuevo y otros botones si los hay */
+}
+.formato-texto1 {
+    background-color:#f7f9cb !important;
+}
