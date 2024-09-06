@@ -60,15 +60,28 @@ window.viewRecord = function(id,revista) {
         return response.json();
     })
     .then(data => {
-        $("#portada").attr('src','/portadas/'+data.revista.portada)
-        $("#revista").val(data.revista.revista)
-        $("#anio_inicial").val(data.revista.anio_inicial)
-        $("#indice").val(data.revista.indice)
-        $("#editorial").val(data.revista.editorial)
-        $("#area_conocimiento").val(data.revista.area_conocimiento)
-        $("#idioma").val(data.revista.idioma)
-        $("#periodicidad").val(data.revista.periodicidad)
-        $("#formato").val(data.revista.formato)
+        console.log(data);
+        $("#portada").attr('src','/portadas/'+data.revista.portada);
+        $("#revista").val(data.revista.revista);
+        $("#anio_inicial").val(data.revista.anio_inicial);
+        $("#indice").val(data.revista.indice);
+        $("#editorial").val(data.revista.editorial);
+        $("#area_conocimiento").val(data.revista.area_conocimiento);
+        $("#idioma").val(data.revista.idioma);
+        $("#periodicidad").val(data.revista.periodicidad);
+        $("#formato").val(data.revista.formato);
+        $("#deposito_legal_impreso").val(data.revista.deposito_legal_impreso);
+        $("#deposito_legal_digital").val(data.revista.deposito_legal_digital);
+        $("#issn_impreso").val(data.revista.issn_impreso);
+        $("#issn_digital").val(data.revista.issn_digital);
+        $("#correo_revista").val(data.revista.correo_revista);
+        $("#nombres_editor").val(data.revista.nombres_editor);
+        $("#correo_editor").val(data.revista.correo_editor);
+        $("#estado").val(data.revista.estado);
+        
+        $("#ciudad").val(data.revista.ciudad);
+        $("#direccion").val(data.revista.direccion);
+
         console.log("revista: ",data.revista);
     })
     .catch(error => {
