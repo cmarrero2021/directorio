@@ -15,6 +15,28 @@
 
 		body {
 			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			padding: 20px;
+		}
+
+		footer {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 50px;
+			text-align: center;
+			line-height: 35px;
+			background-color: #f1f1f1;
+			font-size: 12px;
+		}
+
+		@page {
+			margin: 20mm;
 		}
 	</style>
 </head>
@@ -23,7 +45,7 @@
 		<img src="assets/images/logo.png" alt="Logo" width="100" height="50">
 		<hr/>
 		@php
-			$clase = "background-color:#c6ccc8";
+			$clase = "background-color:#f1f1f1";
 		@endphp
 		<table width="100%">
 			<tr>
@@ -33,62 +55,67 @@
 			</tr>
 			<tr style="{{$clase}}">
 				<td><strong>URL:</strong></td>
-				<td> <span id="#url">{{$revista->url}}</td>
+				<td> <span id="#url">{{$revista->url}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Año:</strong></td>
-				<td> <span id="#anio_inicial">{{$revista->anio_inicial}}</td>
+				<td> <span id="#anio_inicial">{{$revista->anio_inicial}}</span></td>
 			</tr>
-			<tr>
-				<td style="background-color:#c6ccc8 !important;"><strong>Depósito Legal Impreso:</strong></td>
-				<td> <span id="#deposito_legal_impreso">{{$revista->deposito_legal_impreso}}</td>
+			<tr style="{{$clase}}">
+				<td ><strong>Depósito Legal Impreso:</strong></td>
+				<td> <span id="#deposito_legal_impreso">{{$revista->deposito_legal_impreso}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Depósito Legal Digital:</strong></td>
-				<td> <span id="#deposito_legal_digital">{{$revista->deposito_legal_digital}}</td>
+				<td> <span id="#deposito_legal_digital">{{$revista->deposito_legal_digital}}</span></td>
 			</tr>
-			<tr style="background-color:#c6ccc8 !important;">
+			<tr  style="{{$clase}}">
 				<td><strong>ISSN Impreso:</strong></td>
-				<td> <span id="#issn_impreso">{{$revista->issn_impreso}}</td>
+				<td> <span id="#issn_impreso">{{$revista->issn_impreso}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>ISSN Digital:</strong></td>
-				<td> <span id="#issn_digital">{{$revista->issn_digital}}</td>
+				<td> <span id="#issn_digital">{{$revista->issn_digital}}</span></td>
 			</tr>
-			<tr style="background-color:#c6ccc8 !important;">
+			<tr  style="{{$clase}}">
 				<td><strong>Índice:</strong></td>
-				<td> <span id="#indice">{{$revista->indice}}</td>
+				<td> <span id="#indice">{{$revista->indice}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Área de Conocimiento:</strong></td>
-				<td> <span id="#area_conocimiento">{{$revista->area_conocimiento}}</td>
+				<td> <span id="#area_conocimiento">{{$revista->area_conocimiento}}</span></td>
 			</tr>
-			<tr style="background-color:#c6ccc8 !important;">
+			<tr  style="{{$clase}}">
 				<td><strong>Idioma:</strong></td>
-				<td> <span id="#idioma">{{$revista->idioma}}</td>
+				<td> <span id="#idioma">{{$revista->idioma}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Periodicidad:</strong></td>
-				<td> <span id="#periodicidad">{{$revista->periodicidad}}</td>
+				<td> <span id="#periodicidad">{{$revista->periodicidad}}</span></td>
 			</tr>
-			<tr style="background-color:#c6ccc8 !important;">
+			<tr  style="{{$clase}}">
 				<td><strong>Formato:</strong></td>
-				<td> <span id="#formato">{{$revista->formato}}</td>
+				<td> <span id="#formato">{{$revista->formato}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Correo Revista:</strong></td>
-				<td> <span id="#correo_revista">{{$revista->correo_revista}}</td>
+				<td> <span id="#correo_revista">{{$revista->correo_revista}}</span></td>
 			</tr>
-			<tr style="background-color:#c6ccc8 !important;">
+			<tr  style="{{$clase}}">
 				<td><strong>Editorial:</strong></td>
-				<td> <span id="#editorial">{{$revista->editorial}}</td>
+				<td> <span id="#editorial">{{$revista->editorial}}</span></td>
 			</tr>
 			<tr>
 				<td><strong>Correo Editorial:</strong></td>
-				<td> <span id="#correo_editor">{{$revista->correo_editor}}</td>
+				<td> <span id="#correo_editor">{{$revista->correo_editor}}</span></td>
 			</tr>
 		</table>
 	</div>
+
+	<!-- Footer -->
+	<footer>
+		<span>Generado el {{ now()->format('d-m-Y H:i') }} | Directorio Revistas ONCTI</span>
+	</footer>
 </body>
 
 </html>
