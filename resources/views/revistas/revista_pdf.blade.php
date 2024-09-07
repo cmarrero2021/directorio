@@ -20,18 +20,15 @@
 </head>
 <body>
 	<div class="container">
-		<img src="{{ url('vendor/adminlte/dist/img/oncti2.png') }}" alt="LogoS ONCTI">
-		
-
-		
-
+		<img src="assets/images/logo.png" alt="Logo" width="100" height="50">
+		<hr/>
 		@php
 			$clase = "background-color:#c6ccc8";
 		@endphp
 		<table width="100%">
 			<tr>
 				<td colspan="2">
-					<h1 class="text-center">Revista: {{ $revista->revista }}</h1>
+					<h2 class="text-center">Revista: {{ $revista->revista }}</h2>
 				</td>
 			</tr>
 			<tr style="{{$clase}}">
