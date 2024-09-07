@@ -11,4 +11,6 @@
 }
 .formato-texto1 {
     background-color:#f7f9cb !important;
+    border-radius: 10px !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2) !important;
 }

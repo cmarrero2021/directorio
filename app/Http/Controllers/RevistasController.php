@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Vrevista;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class RevistasController extends Controller
 {
@@ -87,9 +88,14 @@ class RevistasController extends Controller
         return response()->json([
             'revista' => $revista
         ]);        
-
     }
-
+    // public function generarPDF(Request $request)
+    public function generarPDF($id)
+    {
+        $revista = Vrevista::findOrFail($id);
+        $pdf = Pdf::loadView('revistas.revista_pdf', compact('revista'));
+        return $pdf->download('revista_'.$revista->revista.'.pdf');
+    }
     /**
      * Show the form for editing the specified resource.
      */
