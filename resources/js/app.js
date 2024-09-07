@@ -75,12 +75,12 @@ window.viewRecord = function(id,revista) {
         $("#issn_impreso").val(data.revista.issn_impreso);
         $("#issn_digital").val(data.revista.issn_digital);
         $("#correo_revista").val(data.revista.correo_revista);
-        $("#nombres_editor").val(data.revista.nombres_editor);
+        // $("#nombres_editor").val(data.revista.nombres_editor);
         $("#correo_editor").val(data.revista.correo_editor);
-        $("#estado").val(data.revista.estado);
+        $("#revista_id").val(data.revista.id);
         
-        $("#ciudad").val(data.revista.ciudad);
-        $("#direccion").val(data.revista.direccion);
+        // $("#ciudad").val(data.revista.ciudad);
+        // $("#direccion").val(data.revista.direccion);
 
         console.log("revista: ",data.revista);
     })
@@ -130,4 +130,57 @@ document.addEventListener('DOMContentLoaded', function() {
     $('[name="0"]').attr('title','Cargar revista');
     let agregarBtn = $('[name="0"]');
     $('[name="0"]').appendTo('.columns-right ')
+    |////////////////////////
+    $('#btnGenerarPDF').on('click', function() {
+        let id = $('#revista_id').val(); // Obtener el id desde el input hidden
+        let url = `/revista/generar-pdf/${id}`;
+        let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'X-CSRF-TOKEN': token,
+                'Content-Type': 'application/json'
+            },
+            responseType: 'blob'
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al generar el PDF');
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            let link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'revista_' + id + '.pdf';
+            link.click();
+        })
+        .catch(error => {
+            console.error('Error al generar el PDF:', error);
+        });
+    });
 });
+
+//     let id = $('#revista_id').val(); // Obtener el id desde un input hidden
+//     let url = `/revista/generar-pdf/${id}`;
+
+//     $.ajax({
+//         url: url,
+//         type: 'POST',
+//         xhrFields: {
+//             responseType: 'blob'
+//         },
+//         success: function(data) {
+//             let blob = new Blob([data], { type: 'application/pdf' });
+//             let link = document.createElement('a');
+//             link.href = window.URL.createObjectURL(blob);
+//             link.download = 'revista_' + id + '.pdf'; // Usa el id o el título
+//             link.click();
+//         },
+//         error: function(xhr, status, error) {
+//             console.error('Error al generar el PDF:', error);
+//         }
+//     });
+// });
+
+

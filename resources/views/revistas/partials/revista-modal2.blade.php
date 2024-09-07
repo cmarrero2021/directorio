@@ -8,7 +8,7 @@
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				
+				<input type="hidden" id="revista_id">
 				<!--  -->
 				<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-2">
@@ -84,6 +84,7 @@
 				<!--  -->
 			</div>
 			<div class="modal-footer">
+				<button type="button" id="btnGenerarPDF" class="btn btn-success">Generar PDF</button>
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 				<button type="button" id= "btnGuardar" class="btn btn-primary">Guardar</button>
 			</div>

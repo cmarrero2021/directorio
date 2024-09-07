@@ -38,4 +38,5 @@ Route::middleware(['auth'])->group(function () {
     Route::post('permisos/search', [PermissionsController::class, 'search'])->name('admin.permissions.search');    
     Route::resource('revistas', RevistasController::class)->names('revistas');
     Route::get('rev_tabla',[RevistasController::class,'rev_tabla'])->name('rev_tabla');
+    Route::post('/revista/generar-pdf/{id}', [RevistasController::class, 'generarPDF'])->name('revista.generar-pdf');
 });
