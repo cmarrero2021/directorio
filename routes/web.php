@@ -39,4 +39,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('revistas', RevistasController::class)->names('revistas');
     Route::get('rev_tabla',[RevistasController::class,'rev_tabla'])->name('rev_tabla');
     Route::post('/revista/generar-pdf/{id}', [RevistasController::class, 'generarPDF'])->name('revista.generar-pdf');
+    Route::get('auxiliares', [RevistasController::class, 'auxiliares'])->name('auxiliares');
+    Route::post('portada', [RevistasController::class, 'portada'])->name('portada');
 });

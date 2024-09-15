@@ -8,6 +8,7 @@
     <div class="container">
         <!-- @include('revistas.partials.revista-modal') -->
         @include('revistas.partials.revista-modal2')
+        @include('revistas.partials.revista_editar')
         <table 
             id="tbl-revistas" 
             class="table table-striped table-hover table-responsive"

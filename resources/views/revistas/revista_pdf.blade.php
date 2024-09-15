@@ -46,12 +46,17 @@
 		<hr/>
 		@php
 			$clase = "background-color:#f1f1f1";
+			//print_r($revista);
 		@endphp
 		<table width="100%">
 			<tr>
 				<td colspan="2">
 					<h2 class="text-center">Revista: {{ $revista->revista }}</h2>
 				</td>
+			</tr>
+			<tr colspan="2">
+				<td><img src = "portadas/{{$revista->portada}}"></td>
+				
 			</tr>
 			<tr style="{{$clase}}">
 				<td><strong>URL:</strong></td>
@@ -108,6 +113,12 @@
 			<tr>
 				<td><strong>Correo Editorial:</strong></td>
 				<td> <span id="#correo_editor">{{$revista->correo_editor}}</span></td>
+			</tr>
+			<tr>
+				<td colspan="2"> 
+				<strong>Resúmen:</strong><br/>
+				<textarea  style="width: 100%; !important;">{{$revista->resumen}}</textarea>
+				</td>
 			</tr>
 		</table>
 	</div>

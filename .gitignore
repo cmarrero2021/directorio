@@ -23,4 +23,6 @@ Homestead.json
 .phpunit.result.cache
 rutas.txt
 
-db/*.*
+db/
+db1/
+*.rar

@@ -14,3 +14,64 @@
     border-radius: 10px !important;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2) !important;
 }
+.toggle-container {
+    width: 200px;
+    margin: 20px;
+}
+
+input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    background: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+.toggle-labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toggle-labels span {
+    font-size: 12px;
+    text-align: center;
+}
+.dehabilitado1 {
+background-color: #e3e5e8 !important;
+}
+.requerido {
+    color: red !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight:900 !important
+}
+.error1 {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 75%;
+    background-color: rgb(226, 7, 7);
+    color:white;
+    margin-left: 0px;
+    border-radius: 10%;
+    font-weight:bold;
+}
