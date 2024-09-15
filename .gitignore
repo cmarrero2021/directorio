@@ -23,10 +23,6 @@ Homestead.json
 .phpunit.result.cache
 rutas.txt
 
-db1/*.*
+db/
+db1/
 *.rar
-db1/yefferson/Revistas/images/002. Academia.jpg
-db1/20240820/directoio.pdf
-db1/20240820/revistas.html
-db1/yefferson/Revistas/index.html
-db1/yefferson/Revistas/images/IMG PoradasPNG.pptx
